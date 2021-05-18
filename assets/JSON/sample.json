@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": "p1",
+      "name": "Max Mustermann",
+      "date": "12.01.21, 09:21",
+      "content": "Heute war ich im Pflanzenladen und es hat mir sehr gut gefallen. Die Verkäuferin war sehr freundlich",
+      "description": "Description 1"
+    },
+    {
+      "id": "p2",
+      "name": "Maja Mau",
+      "date": "03.01.21, 021:30",
+      "content": "Hat hier noch jemand außer mir so große Schwierigkeiten, Eine Monstera wachsen zu lassen?','Suche Vergissmeinicht, biete Hund.",
+      "description": "Description 2"
+    },
+    {
+      "id": "p3",
+      "name": "Timo Lukaschenko",
+      "date": "01.01.21, 09:21",
+      "content": "Suche Freunde, bin witzig.",
+      "description": "Description 3"
+    }
+  ]
+}
