@@ -30,3 +30,8 @@ performance and is completely free, as long as the traffic remains below a certa
 threshold. If the product is planned to be scaled significantly, there ought to
 be a different solution with more freedom and less costs. However, this does also
 bring the risk of security, that has to be addressed.
+
+### Launching the project:
+It is recommended to use the newest Android Studio IDE, the newest FLutter SDK and to
+set up flutter inside of Android Studio. Afterwards this code can be launched via a
+virtual smartphone emulator.
