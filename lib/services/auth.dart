@@ -9,40 +9,24 @@ class AuthService {
   
   // create user obj based on FirebaseUser so that we
   // only have uid instead of all the information
-  User _userFromFirebaseUser(FirebaseUser user){
-    return user != null ? User(uid: user.uid) : null;
+  AuthUser _userFromFirebaseUser(User user){
+    return user != null ? AuthUser(uid: user.uid) : null;
   }
 
   // auth change user stream
   // Checking constantly if someone is logging in or out and
   // then we map that event in our own User-Model.
-  Stream<User> get user {
-    return _auth.onAuthStateChanged
-        //.map((FirebaseUser user) => _userFromFirebaseUser(user));
+  Stream<AuthUser> get user {
+    return _auth.authStateChanges()
           .map(_userFromFirebaseUser);
   }
 
-  /*
-  // sign in anonym
-  Future signInAnon() async {
-    try{
-      AuthResult result = await _auth.signInAnonymously();
-      FirebaseUser user = result.user;
-      return _userFromFirebaseUser(user);
-    }catch(e){
-      print(e.toString());
-      return null;
-    }
-  }
-   */
-
 
   // sign in with email/password
-
   Future signInWithEmailAndPassword(String email, String password) async{
     try{
-      AuthResult result = await _auth.signInWithEmailAndPassword(email: email, password: password);
-      FirebaseUser user = result.user;
+      UserCredential result = await _auth.signInWithEmailAndPassword(email: email, password: password);
+      User user = result.user;
       return _userFromFirebaseUser(user);
     }catch(e){
       print(e.toString());
@@ -51,18 +35,22 @@ class AuthService {
   }
 
   // register with email and password
-
   Future registerWithEmailAndPassword(String email, String password) async{
-
 
     var date = new DateTime.now().toString();
     var dateParse = DateTime.parse(date);
     var formattedDate = "${dateParse.day}-${dateParse.month}-${dateParse.year}";
 
     try{
-      AuthResult result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-      FirebaseUser user = result.user;
-      await DatabaseService(uid : user.uid).updateUserData("PlaceholderName","Pflanzenkenner","Ich werde die Pflanzen rächen",formattedDate.toString());
+      UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      User user = result.user;
+
+      UserProfile userProfile = UserProfile(first_name: "Max", surname: "Mustermann", shortSum: "Plant-Evangelist",
+      quote: "Nothing is more precious than time.", date: DateTime.now().millisecondsSinceEpoch, friends: [], groups: [],
+      interestedIn: "Advice", location: "Barcelona", plantsCount: 3, plantLoverSince: 2017,activeChatsIds: [],
+      profilePictureId: "none", profileGalleryPictureIds: ["none","none","none"],profileGardenItems: [],gardenCategories: []);
+
+      await DatabaseService(uid : user.uid).updateUserData(userProfile);
       return _userFromFirebaseUser(user);
     }catch(e){
       print(e.toString());

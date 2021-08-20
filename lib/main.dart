@@ -1,12 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:plantopia1/models/user.dart';
 import 'package:plantopia1/screens/wrapper.dart';
-import 'package:provider/provider.dart';
 import 'package:plantopia1/services/auth.dart';
 import 'models/user.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
     // StreamProvider is the recommended way to handle
     // changes which affect the whole project such as
     // authentication.
-    return StreamProvider<User>.value (
+    return StreamProvider<AuthUser>.value (
       // Service.name activates the get-function in the
       // specific file with the specific data type.
       value: AuthService().user,

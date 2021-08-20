@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantopia1/models/user.dart';
+import 'package:plantopia1/screens/Feed/feed_page.dart';
+import 'package:plantopia1/screens/authenticate/set_user_data.dart';
 import 'package:plantopia1/services/auth.dart';
 import 'package:plantopia1/shared/constants.dart';
 import 'package:plantopia1/shared/constants.dart';
@@ -33,7 +35,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
 
-    final user = Provider.of<User>(context);
+    final authUser = Provider.of<AuthUser>(context);
 
     return loading ? Loading() : Scaffold(
       backgroundColor: Colors.green[100],//Colors.brown[100],
@@ -84,17 +86,22 @@ class _RegisterState extends State<Register> {
                         ),
                       ),
                       onPressed:() async{
-                        print(user);
+                        print("Register user: " + authUser.toString());
                         if(_formKey.currentState.validate()){
-
                           setState(() => loading = true);
-
                           dynamic result = await _auth.registerWithEmailAndPassword(email, password);
                           if(result == null){
+                            print("TEST Register: result == null");
                             setState(() {
                               error = 'please supply a valid email';
                               loading = false;
                             });
+                          }else if(result != null){
+                            print("TEST Register: result != null " + authUser.toString());
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => SetUserDataPage()),
+                            );
                           }
                         }
                       }

@@ -10,3 +10,9 @@ focusedBorder: OutlineInputBorder(
 borderSide: BorderSide(color: Colors.red, width: 2.0)
 ) ,
 );
+
+class Constants{
+  Constants._();
+  static const double padding =20;
+  static const double avatarRadius =45;
+}

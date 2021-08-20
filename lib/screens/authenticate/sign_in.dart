@@ -34,7 +34,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
 
-    final user = Provider.of<User>(context);
+    final user = Provider.of<AuthUser>(context);
 
     // If loading is true, we display the loading animation
     return loading ? Loading() : Scaffold(
@@ -109,7 +109,7 @@ class _SignInState extends State<SignIn> {
                       if(result != null){
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => FeedPage()),
+                          MaterialPageRoute(builder: (context) => FeedPage(authUser: user,)),
                         );
                       }
                     }

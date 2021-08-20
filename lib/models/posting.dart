@@ -1,21 +1,13 @@
 class Posting{
 
-  final String name;
   final String uid;
   final String creatorId;
   final String content;
-  final String date;
+  final int date;
+  final String groupId;
+  final int commentsAmount;
+  final List<String> likes;
 
-  Posting({this.uid, this.name, this.content, this.date, this.creatorId});
-
-  factory Posting.fromJson(Map<String, dynamic> json){
-    return new Posting(
-      uid: json['id'] as String,
-      name: json['name'] as String,
-      date: json['date'] as String,
-      content: json['content'] as String,
-      creatorId: json['creatorId'] as String
-    );
-  }
-
+  Posting({this.uid, this.content, this.date, this.creatorId, this.likes, this.groupId,this.commentsAmount});
+  
 }

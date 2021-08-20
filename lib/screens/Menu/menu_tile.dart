@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:plantopia1/models/brew.dart';
-import 'package:plantopia1/models/posting.dart';
 import 'package:plantopia1/models/user.dart';
-import 'package:plantopia1/screens/Feed/feed_page.dart';
-import 'package:plantopia1/screens/Messages/messages_page.dart';
-import 'package:plantopia1/screens/Profile/profile_page.dart';
 import 'package:plantopia1/screens/authenticate/authenticate.dart';
 import 'package:plantopia1/services/auth.dart';
-import 'package:provider/provider.dart';
+import 'package:plantopia1/shared/Routing.dart';
 
 class MenuTile extends StatelessWidget {
 
@@ -16,74 +11,19 @@ class MenuTile extends StatelessWidget {
   final String name;
   final String subtext;
   final Icon icon;
+  final AuthUser authUser;
+  final UserProfile authUserProfile;
 
   //constructor
-  MenuTile({this.name, this.subtext, this.icon});
-
+  MenuTile({this.name, this.subtext, this.icon, this.authUser, this.authUserProfile});
 
   @override
   Widget build(BuildContext context) {
 
-    // Getting the current user for the log out tile
-    final user = Provider.of<User>(context);
+      return _buildTile(context);
+  }
 
-    // Function that logs our user out and returns to the
-    // auth page.
-    logOut() async{
-      _auth.signOut();
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Authenticate(),
-        )
-      );
-    }
-
-    goProfile(context){
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => ProfilePage(title:'Profile')),
-      );
-    }
-
-    goMessages(context){
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => MessagePage(title:'Messages')),
-      );
-    }
-
-    goHome(context){
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => FeedPage()),
-      );
-    }
-
-    // Handles the tapping on the tiles
-    handleTap(String name){
-      switch(name){
-        case 'Profile':
-          goProfile(context);
-          break;
-        case 'Messages':
-          goMessages(context);
-          break;
-        case 'Feed':
-          goHome(context);
-          break;
-        case 'Debug':
-          print(user.uid);
-          break;
-        case 'Log Out':
-          print(user);
-          logOut();
-          break;
-        default:
-          break;
-      }
-    }
-
+  Widget _buildTile(BuildContext context){
     return Padding(
       padding: EdgeInsets.only(top: 8.0),
       child: Card(
@@ -91,17 +31,59 @@ class MenuTile extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
+              tileColor: Colors.green[50],
               leading: Icon(icon.icon),
               title: Text(name),
               subtitle: Text(subtext),
               onTap: () {
                 print(name);
-                handleTap(name);
+                handleTap(name, context);
               },
             ),
           ],
         ),
       ),
     );
+  }
+
+  // Function that logs our user out and returns to the auth page.
+  void logOut(BuildContext context) async{
+    _auth.signOut();
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Authenticate(),
+        )
+    );
+  }
+
+  // Handles the tapping on the tiles
+  void handleTap(String name, BuildContext context){
+    switch(name){
+      case 'Profile':
+        routeToOwnProfilePage(context,authUser,authUserProfile);
+        break;
+      case 'Messages':
+        routeToOpenChatsPage(context,authUser,authUserProfile);
+        break;
+      case 'Feed':
+        routeToFeedPage(context,authUser,authUserProfile);
+        break;
+      case 'Groups':
+        routeToAllGroupsPage(context, authUser, authUserProfile);
+        break;
+      case 'Marketplace':
+        routeToMarketplacePage(context,authUser,authUserProfile);
+        break;
+      case 'Debug':
+        print(authUser.uid);
+        break;
+      case 'Log Out':
+        print(authUser.toString());
+        logOut(context);
+        break;
+      default:
+        break;
+    }
   }
 }
