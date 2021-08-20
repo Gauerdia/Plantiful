@@ -1,4 +1,4 @@
-# Plantopia
+# Plantiful
 
 ## Idea
 
