@@ -35,3 +35,6 @@ bring the risk of security, that has to be addressed.
 It is recommended to use the newest Android Studio IDE, the newest FLutter SDK and to
 set up flutter inside of Android Studio. Afterwards this code can be launched via a
 virtual smartphone emulator.
+
+[The Feed of the project](https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_feed.png?raw=true)
+[The middle part of the profile](https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_profile.png?raw=true)
