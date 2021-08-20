@@ -37,6 +37,10 @@ set up flutter inside of Android Studio. Afterwards this code can be launched vi
 virtual smartphone emulator.
 
 ### Screenshots:
+To give an idea how the project looks like and which features are already included, there
+are a few screenshots attached so that this whole text is more relatable. Furthermore with
+the screenshots it is possible to get an idea of the overall graphic scheme that is proposed
+in the beginning.
 
 The feed of the platform            |  The middle part of the profile page
 :-------------------------:|:-------------------------:
