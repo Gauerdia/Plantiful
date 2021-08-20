@@ -31,12 +31,12 @@ threshold. If the product is planned to be scaled significantly, there ought to
 be a different solution with more freedom and less costs. However, this does also
 bring the risk of security, that has to be addressed.
 
-### Launching the project:
+## Launching the project
 It is recommended to use the newest Android Studio IDE, the newest FLutter SDK and to
 set up flutter inside of Android Studio. Afterwards this code can be launched via a
 virtual smartphone emulator.
 
-### Screenshots:
+## Screenshots
 To give an idea how the project looks like and which features are already included, there
 are a few screenshots attached so that this whole text is more relatable. Furthermore with
 the screenshots it is possible to get an idea of the overall graphic scheme that is proposed
