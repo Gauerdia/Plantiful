@@ -36,6 +36,5 @@ It is recommended to use the newest Android Studio IDE, the newest FLutter SDK a
 set up flutter inside of Android Studio. Afterwards this code can be launched via a
 virtual smartphone emulator.
 
-![test image size]<img src="https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_feed.png?raw=true" width="400" height="790">
-![The Feed of the project](https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_feed.png?raw=true)
-![The middle part of the profile](https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_profile.png?raw=true)
+<img src="https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_feed.png?raw=true" width="400" height="790">
+<img src="https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_profile.png?raw=true" width="400" height="790">
