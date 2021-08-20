@@ -36,9 +36,16 @@ It is recommended to use the newest Android Studio IDE, the newest FLutter SDK a
 set up flutter inside of Android Studio. Afterwards this code can be launched via a
 virtual smartphone emulator.
 
-Solarized dark             |  Solarized Ocean
+### Screenshots:
+
+qvbdTJTrbTbr0KJBsp8PpxDrY9t1
+1629446296699
+UwHWN6aiZegPemODNHnlIDFFo4m2
+
+
+The feed of the platform            |  The middle part of the profile page
 :-------------------------:|:-------------------------:
 <img src="https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_feed.png?raw=true" width="300" height="580">  |  <img src="https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_profile.png?raw=true" width="300" height="580">
-
-<img src="https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_feed.png?raw=true" width="300" height="580">
-<img src="https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_profile.png?raw=true" width="300" height="580">
+The messaging functionality         |  The commenting functionality
+:-------------------------:|:-------------------------:
+<img src="https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_messaging.png?raw=true" width="300" height="580">  |  <img src="https://github.com/Gauerdia/plantopia/blob/master/readme_content/screenshot_commenting.png?raw=true" width="300" height="580">
