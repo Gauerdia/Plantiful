@@ -5,10 +5,10 @@
 A social media, specifically designed for people, who love plants.
 The idea is to provide all the fundamental functionalities of a social
 media platform. With this being covered, a variety of functions shall be
-implemented that make the experience on this platform something special
+implemented that makes the experience on this platform something special
 for people, who know a lot about plants, who love to learn more and who
 simply feel good, sharing their experiences with like-minded people.
-To achieve this, there exists a roadmap with a lot of idea to make the
+To achieve this, there exists a roadmap with a lot of ideas to make the
 user experience as wholesome as possible.
 
 ## Technology
@@ -37,8 +37,8 @@ set up flutter inside of Android Studio. Afterwards this code can be launched vi
 virtual smartphone emulator.
 
 ## Screenshots
-To give an idea how the project looks like and which features are already included, there
-are a few screenshots attached so that this whole text is more relatable. Furthermore with
+To give an idea of how the project looks like and which features are already included, there
+are a few screenshots attached, so that this whole text is more relatable. Furthermore, with
 the screenshots it is possible to get an idea of the overall graphic scheme that is proposed
 in the beginning.
 
